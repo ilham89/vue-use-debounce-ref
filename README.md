@@ -1,24 +1,38 @@
 # debounce-vue
 
-## Project setup
-```
-yarn install
+## Installation
+
+```shell
+npm i vue-use-debounce-ref
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Usage
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Vue
 
-### Lints and fixes files
-```
-yarn lint
-```
+```jsx
+<template>
+    <div>
+        <label>Search</label>
+        <input v-model="input" type="text" />
+        <div>Value: {{ input }}</div>
+  </div>
+</template>
+<script>
+import { watch } from 'vue'
+import useDebouncedRef from "vue-use-debounce-ref";
+export default {
+    setup() {
+        const input = useDebouncedRef('', 1000)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+        watch(input, newData => {
+            console.log({ newData })
+             // init an API request
+        })
+    return {
+        input,
+    }
+  },
+}
+</script>
+```
