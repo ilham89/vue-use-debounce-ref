@@ -2,8 +2,16 @@
 
 ## Installation
 
+### Using npm
+
 ```shell
 npm i vue-use-debounce-ref
+```
+
+### Using yarn
+
+```shell
+yarn add vue-use-debounce-ref
 ```
 
 ## Usage
